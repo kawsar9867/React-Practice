@@ -1,11 +1,15 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import Countries from "../Countries";
 
 const Country = ({ country }) => {
-  console.log(country);
+  const [visited, setvisited] = useState(false);
 
   const handleVisited = () => {
-    console.log("button Clicked");
+    if (visited) {
+      setvisited(false);
+    } else {
+      setvisited(true);
+    }
   };
 
   return (
@@ -16,8 +20,15 @@ const Country = ({ country }) => {
       <p>Area: {country.area.area}</p>
       <p>Capital: {country.capital.capital}</p>
       <p>Region: {country.region.region}</p>
-      <button className="btn" onClick={handleVisited}>
-        Not Visited
+      <button
+        className="btn"
+        onClick={handleVisited}
+        style={{
+          backgroundColor: visited ? "green" : "red",
+          color: visited ? "white" : "black",
+        }}
+      >
+        {visited ? "Visited" : "Not Visited"}
       </button>
     </div>
   );
