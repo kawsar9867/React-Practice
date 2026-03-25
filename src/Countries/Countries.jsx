@@ -10,7 +10,7 @@ const Countries = ({ countriesPromise }) => {
       <h1>All Countries - {countries.length}</h1>
       <div className="devide">
         {countries.map((country) => (
-          <Country country={country} />
+          <Country key={country.cca3.cca3} country={country} />
         ))}
       </div>
     </div>
