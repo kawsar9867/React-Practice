@@ -8,6 +8,7 @@
   font-size: large;
   text-align: left;
   height: 440px;
+  color: black;
 }
 
 body {
@@ -43,4 +44,14 @@ body {
   .devide {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+/* Conditional CSS */
+
+.country-visited {
+  background-color: rgb(136, 216, 136);
+}
+
+.country-not-visited {
+  background-color: rgb(207, 134, 134);
 }
